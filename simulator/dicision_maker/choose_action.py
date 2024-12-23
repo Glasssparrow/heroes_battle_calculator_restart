@@ -52,7 +52,4 @@ def choose_action(the_unit, battle_map):
             attack_pos_for_action = pos_for_action
     # TODO
     # Выбор между атакой и выходом из опасной зоны.
-    else:
-        # Если может атаковать, то атакуем с точки наименьшей угрозы.
-        pass
     return 0
