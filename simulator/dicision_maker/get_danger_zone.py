@@ -1,8 +1,6 @@
 from ..simulator_keywords import (
     MELEE_ACTIONS,  # Лист действий ближнего боя
-    MELEE_ACTION,  # ближний бой
     MELEE_SPELL,  # ближний бой без возможности двигаться
-    HIT_AND_RUN_ACTION,  # Атака с возвратом на исходную позицию
 )
 
 
