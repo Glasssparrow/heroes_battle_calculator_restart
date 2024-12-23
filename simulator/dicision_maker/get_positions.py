@@ -4,6 +4,7 @@ from ..simulator_keywords import (
     MELEE_ACTIONS,  # Лист действий ближнего боя
     MELEE_SPELL,  # ближний бой без возможности двигаться
     HIT_AND_RUN_ACTION,  # Атака с возвратом на исходную позицию
+    MOVEMENT_ACTIONS,  # Лист действий движения
 )
 
 
@@ -135,4 +136,10 @@ def get_movement_positions(the_unit, battle_map):
     for (x, y), length, path in available_cells:
         attack_positions.add_coord(x, y)
         attack_positions.add_unit_to_coord(x, y, the_unit)
+    for action_index, action in enumerate(the_unit.actions):
+        # Атаки после движения
+        if (
+            action.type_of_action in MOVEMENT_ACTIONS
+        ):
+            pass
     return movement_positions
