@@ -141,5 +141,14 @@ def get_movement_positions(the_unit, battle_map):
         if (
             action.type_of_action in MOVEMENT_ACTIONS
         ):
-            pass
+            pos_for_action = AttackPositionsForAction(
+                action_index=action_index,
+                action=action,
+            )
+            movement_positions.append(pos_for_action)
+            for x, y in attack_positions.positions:
+                pos_for_action.add_coord(
+                    coord=(x, y,),
+                    targets=attack_positions.get_units(x, y),
+                )
     return movement_positions
